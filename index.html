@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神马影视-神马影视在线观看_神马影视高清电影电视剧资源</title>
+<meta name="description" content="神马影视是一个聚合高清电影、电视剧、综艺与动漫的在线观看站点导航页，提供片库分类、热门推荐与播放入口说明，帮助访问者快速找到想看的神马影视内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101820'/%3E%3Cpath d='M24 18l22 14-22 14z' fill='%23ffb020'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0e1319;
+  --bg-soft:#151c24;
+  --panel:#1a232d;
+  --line:#26313d;
+  --text:#e8edf2;
+  --muted:#9aa8b6;
+  --gold:#ffb020;
+  --gold-deep:#e0940a;
+  --cyan:#3fc8d8;
+  --radius:14px;
+  --maxw:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,19,25,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.hd-inner{display:flex;align-items:center;gap:24px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(145deg,#1f2b37,#101820);
+  display:grid;place-items:center;
+  border:1px solid #2f3d4b;
+}
+.logo-mark svg{width:18px;height:18px}
+.logo-text{
+  font-size:19px;font-weight:800;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--gold),#ffd57a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
+}
+nav.main{display:flex;gap:22px;margin-left:auto;font-size:14.5px;color:var(--muted)}
+nav.main a{padding:6px 0;position:relative;transition:color .2s}
+nav.main a:hover{color:var(--gold)}
+nav.main a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .2s;
+}
+nav.main a:hover::after{transform:scaleX(1)}
+.hd-cta{
+  font-size:14px;font-weight:600;color:#101820;background:var(--gold);
+  padding:8px 16px;border-radius:999px;white-space:nowrap;transition:background .2s;
+}
+.hd-cta:hover{background:#ffc44a}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 420px at 80% -10%,rgba(255,176,32,.14),transparent 60%),
+    radial-gradient(700px 400px at 5% 110%,rgba(63,200,216,.10),transparent 60%),
+    var(--bg-soft);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;
+  padding:64px 0 58px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.5px;color:var(--gold);
+  border:1px solid rgba(255,176,32,.35);border-radius:999px;
+  padding:5px 14px;margin-bottom:20px;background:rgba(255,176,32,.07);
+}
+h1{
+  font-size:clamp(30px,4.4vw,50px);
+  line-height:1.2;font-weight:900;letter-spacing:1px;
+  background:linear-gradient(100deg,#ffffff 20%,#ffd57a 60%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{margin-top:18px;color:var(--muted);font-size:15.5px;max-width:38em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14.5px;font-weight:600;padding:11px 22px;border-radius:999px;
+  border:1px solid transparent;transition:.2s;
+}
+.btn-primary{background:var(--gold);color:#101820}
+.btn-primary:hover{background:#ffc44a;transform:translateY(-1px)}
+.btn-ghost{border-color:#33414f;color:var(--text);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:34px;margin-top:36px;flex-wrap:wrap}
+.hero-stats div b{display:block;font-size:22px;color:var(--gold);font-weight:800}
+.hero-stats div span{font-size:12.5px;color:var(--muted)}
+
+/* poster visual */
+.poster{
+  position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid #2b3845;background:#0b1016;
+  box-shadow:0 24px 60px -20px rgba(0,0,0,.75);
+}
+.poster svg{width:100%;height:auto}
+.poster-label{
+  position:absolute;left:14px;bottom:14px;
+  font-size:12px;color:#101820;background:var(--gold);
+  padding:4px 12px;border-radius:999px;font-weight:700;letter-spacing:.5px;
+}
+
+/* section common */
+section{padding:56px 0}
+.sec-head{margin-bottom:30px}
+.sec-tag{font-size:12.5px;letter-spacing:2px;color:var(--cyan);font-weight:700}
+.sec-head h2{
+  font-size:clamp(21px,2.6vw,28px);font-weight:800;margin-top:8px;letter-spacing:.5px;
+}
+.sec-head p{color:var(--muted);font-size:14.5px;margin-top:8px;max-width:46em}
+
+/* categories */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;transition:.22s;display:block;
+}
+.cat-card:hover{border-color:var(--gold);transform:translateY(-3px);background:#1e2833}
+.cat-card .ico{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(255,176,32,.12);margin-bottom:14px;
+}
+.cat-card .ico svg{width:21px;height:21px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cat-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.cat-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* picks */
+.pick-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pick{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.22s;
+}
+.pick:hover{border-color:#3a4a5b;transform:translateY(-3px)}
+.pick .thumb{position:relative;aspect-ratio:16/9;background:#0b1016}
+.pick .thumb svg{width:100%;height:100%}
+.pick .badge{
+  position:absolute;top:10px;left:10px;font-size:11.5px;font-weight:700;
+  background:rgba(16,24,32,.82);color:var(--gold);border:1px solid rgba(255,176,32,.4);
+  padding:2px 10px;border-radius:999px;
+}
+.pick .body{padding:16px 18px 18px}
+.pick h3{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.pick p{font-size:13px;color:var(--muted);line-height:1.65}
+.pick .meta{margin-top:12px;font-size:12px;color:#7c8b9a;display:flex;gap:14px}
+
+/* guide / article */
+.guide-wrap{
+  display:grid;grid-template-columns:1.4fr .6fr;gap:44px;align-items:start;
+}
+.guide-wrap h2{font-size:clamp(21px,2.6vw,27px);font-weight:800;margin-bottom:18px}
+.guide-wrap p{color:#c3ced9;font-size:15px;margin-bottom:16px}
+.guide-wrap strong{color:var(--gold);font-weight:700}
+.side-card{
+  background:linear-gradient(160deg,#1d2833,#151c24);
+  border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+}
+.side-card h3{font-size:15px;font-weight:700;margin-bottom:14px;color:var(--gold)}
+.side-card ul{list-style:none;font-size:13.5px;color:var(--muted)}
+.side-card li{padding:9px 0;border-bottom:1px dashed #2a3743;display:flex;gap:10px}
+.side-card li:last-child{border-bottom:none}
+.side-card li span{color:var(--cyan);font-weight:700;flex:0 0 auto}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+.step{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:26px;font-weight:900;color:rgba(255,176,32,.28);
+  display:block;margin-bottom:10px;letter-spacing:1px;
+}
+.step h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.step p{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* faq */
+.faq{display:grid;gap:14px}
+details{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;transition:border-color .2s;
+}
+details[open]{border-color:rgba(255,176,32,.45)}
+summary{
+  cursor:pointer;font-size:15px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:400;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin-top:12px;font-size:14px;color:var(--muted);line-height:1.75}
+
+/* download band */
+.band{
+  background:linear-gradient(120deg,#1c2631,#141b22);
+  border:1px solid var(--line);border-radius:18px;
+  padding:34px 36px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  justify-content:space-between;
+}
+.band h2{font-size:clamp(19px,2.4vw,24px);font-weight:800;margin-bottom:8px}
+.band p{font-size:14px;color:var(--muted);max-width:40em}
+.btn-dl{
+  background:var(--gold);color:#101820;font-weight:700;font-size:14.5px;
+  padding:12px 30px;border-radius:999px;pointer-events:none;
+  display:inline-flex;align-items:center;gap:8px;
+}
+
+/* footer */
+footer.site{
+  border-top:1px solid var(--line);background:#0b1016;
+  padding:40px 0 30px;margin-top:20px;
+}
+.ft-top{display:flex;gap:36px;flex-wrap:wrap;justify-content:space-between;margin-bottom:26px}
+.ft-brand{max-width:340px}
+.ft-brand .logo-text{font-size:17px}
+.ft-brand p{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.7}
+.ft-links{display:flex;gap:56px;flex-wrap:wrap}
+.ft-col h4{font-size:13px;color:var(--text);margin-bottom:12px;letter-spacing:.5px}
+.ft-col a{display:block;font-size:13px;color:var(--muted);padding:4px 0;transition:color .2s}
+.ft-col a:hover{color:var(--gold)}
+.ft-bottom{
+  border-top:1px solid #1c2530;padding-top:20px;
+  font-size:12.5px;color:#6f7f8e;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:44px 0 46px}
+  .poster{max-width:440px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .pick-list{grid-template-columns:repeat(2,1fr)}
+  .guide-wrap{grid-template-columns:1fr;gap:28px}
+  .steps{grid-template-columns:1fr}
+  nav.main{display:none}
+  .hd-cta{margin-left:auto}
+  .band{padding:26px 22px}
+}
+@media(max-width:600px){
+  section{padding:40px 0}
+  .cat-grid{grid-template-columns:1fr}
+  .pick-list{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+  .ft-links{gap:30px}
+  .hero p.lead{font-size:14.5px}
+  .hd-inner{gap:12px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap hd-inner">
+    <a class="logo" href="#top" aria-label="神马影视首页">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="#ffb020"/></svg>
+      </span>
+      <span class="logo-text">神马影视</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#categories">片库分类</a>
+      <a href="#picks">热门推荐</a>
+      <a href="#guide">观看说明</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="hd-cta" href="#picks">开始找片</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">高清片库 · 分类直达</span>
+        <h1>神马影视</h1>
+        <p class="lead">神马影视把电影、电视剧、综艺和动漫收在同一个入口里，按类型、地区和年份分层整理。打开页面就能看到当下的热门片单，也能顺着分类一路找到想看的那一部。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#picks">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z" fill="currentColor"/></svg>
+            浏览热门推荐
+          </a>
+          <a class="btn btn-ghost" href="#categories">查看全部片库分类</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>4</b><span>主片库频道</span></div>
+          <div><b>3</b><span>筛选维度</span></div>
+          <div><b>7×24</b><span>片单持续更新</span></div>
+        </div>
+      </div>
+      <div class="poster" aria-hidden="true">
+        <svg viewBox="0 0 480 320" role="img">
+          <defs>
+            <linearGradient id="gsky" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1d2a38"/>
+              <stop offset="1" stop-color="#0b1016"/>
+            </linearGradient>
+            <linearGradient id="ggold" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#ffb020"/>
+              <stop offset="1" stop-color="#ffd57a"/>
+            </linearGradient>
+          </defs>
+          <rect width="480" height="320" fill="url(#gsky)"/>
+          <circle cx="392" cy="70" r="58" fill="#ffb020" opacity="0.10"/>
+          <circle cx="392" cy="70" r="34" fill="#ffb020" opacity="0.16"/>
+          <g opacity="0.5" fill="#2b3a4a">
+            <rect x="34" y="196" width="70" height="90" rx="6"/>
+            <rect x="118" y="164" width="54" height="122" rx="6"/>
+            <rect x="186" y="212" width="62" height="74" rx="6"/>
+          </g>
+          <rect x="60" y="72" width="230" height="140" rx="14" fill="#101820" stroke="#33414f"/>
+          <rect x="80" y="92" width="190" height="82" rx="8" fill="#1a232d"/>
+          <path d="M158 116l38 17-38 17z" fill="url(#ggold)"/>
+          <rect x="80" y="184" width="120" height="8" rx="4" fill="#2b3a4a"/>
+          <rect x="80" y="198" width="72" height="6" rx="3" fill="#22303c"/>
+          <rect x="286" y="128" width="152" height="96" rx="12" fill="#16202a" stroke="#33414f"/>
+          <path d="M348 160l26 16-26 16z" fill="#3fc8d8" opacity="0.85"/>
+          <rect x="304" y="200" width="116" height="6" rx="3" fill="#25323f"/>
+          <path d="M0 286h480" stroke="#26313d"/>
+        </svg>
+        <span class="poster-label">片库总览</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分类 -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">CATEGORIES</span>
+        <h2>神马影视片库分类</h2>
+        <p>片库按内容形态分成四个频道，每个频道再按类型、地区和年份细分。先确定频道，再用筛选条件缩小范围，是神马影视上找片最省事的路径。</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-card" href="#picks">
+          <span class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M7 5v14M17 5v14M2 9h5M17 9h5M2 15h5M17 15h5"/></svg></span>
+          <h3>电影</h3>
+          <p>动作、剧情、喜剧、科幻等类型片集中展示，院线新片与经典老片同库排列。</p>
+        </a>
+        <a class="cat-card" href="#picks">
+          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+          <h3>电视剧</h3>
+          <p>按连载状态区分已完结与更新中，国产剧、美剧、日韩剧各自成组。</p>
+        </a>
+        <a class="cat-card" href="#picks">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg></span>
+          <h3>综艺</h3>
+          <p>季播节目与常驻综艺分开归档，方便按播出时间顺序追看最新一期。</p>
+        </a>
+        <a class="cat-card" href="#picks">
+          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01M8 15c1.2 1.3 2.6 2 4 2s2.8-.7 4-2"/></svg></span>
+          <h3>动漫</h3>
+          <p>国漫、日番与剧场版并列，剧场版单独标注，适合按系列连续观看。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门推荐 -->
+  <section id="picks" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">NOW PLAYING</span>
+        <h2>本周热门片单</h2>
+        <p>热门片单由片库近期的浏览与收藏情况汇总而来，每张卡片标注内容类型与更新状态。点开卡片可以进入对应条目的详情区，查看简介与可播放信息。</p>
+      </div>
+      <div class="pick-list">
+        <article class="pick">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#131c25"/>
+              <circle cx="256" cy="46" r="34" fill="#ffb020" opacity="0.16"/>
+              <path d="M0 150l70-52 52 38 46-30 60 44 42-26 50 26v30H0z" fill="#1e2a36"/>
+              <path d="M148 74l34 16-34 16z" fill="#ffb020"/>
+            </svg>
+            <span class="badge">热门电影</span>
+          </div>
+          <div class="body">
+            <h3>院线新片</h3>
+            <p>近期上线的高关注度电影，覆盖动作与剧情两类主类型，适合周末整块时间观看。</p>
+            <div class="meta"><span>高清画质</span><span>类型筛选</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#131c25"/>
+              <circle cx="70" cy="50" r="30" fill="#3fc8d8" opacity="0.14"/>
+              <rect x="40" y="66" width="240" height="82" rx="10" fill="#1a232d" stroke="#2b3a4a"/>
+              <path d="M146 90l26 17-26 17z" fill="#3fc8d8" opacity="0.85"/>
+            </svg>
+            <span class="badge">连载剧集</span>
+          </div>
+          <div class="body">
+            <h3>更新中的剧集</h3>
+            <p>正在连载的电视剧按更新节奏排在前列，已完结的整季作品可以在完结区一次看完。</p>
+            <div class="meta"><span>追更提示</span><span>季集归档</span></div>
+          </div>
+        </article>
+        <article class="pick">
+          <div class="thumb">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#131c25"/>
+              <circle cx="160" cy="88" r="52" fill="#ffb020" opacity="0.10"/>
+              <circle cx="160" cy="88" r="30" fill="none" stroke="#ffb020" stroke-width="3"/>
+              <path d="M160 74v16l12 8" stroke="#ffb020" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="badge">综艺动漫</span>
+          </div>
+          <div class="body">
+            <h3>轻松向内容</h3>
+            <p>综艺与动漫放在同一推荐位，节奏轻、单集短，适合碎片时间逐集消费。</p>
+            <div class="meta"><span>单集短</span><span>系列连贯</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看说明 -->
+  <section id="guide">
+    <div class="wrap guide-wrap">
+      <div>
+        <h2>神马影视怎么用：从分类到播放</h2>
+        <p><strong>神马影视</strong>页面本身承担的是导航与信息聚合的角色：它把片库结构、热门片单和筛选入口集中在一个页面上，让你不必在多个站点之间来回跳转，就能判断一部作品是否值得点开。</p>
+        <p>使用顺序建议是：先在首屏确认当前热门方向，再进入片库分类锁定频道，最后用类型、地区、年份三个维度收窄结果。三个条件叠加后，剩下的条目通常只有几条到十几条，翻页成本很低。</p>
+        <p>对于连载中的电视剧与季播综艺，<strong>神马影视</strong>会把更新状态直接标在卡片上，已完结与更新中分开呈现，避免追到一半才发现断更。动漫频道则把剧场版与正片分开，按系列顺着看不会错序。</p>
+        <p>片单会随片库变动调整，推荐位反映的是近期浏览与收藏的集中方向，而不是固定的排行榜。想看固定类型的作品，直接从分类入口进入比在推荐位里翻找更准确。</p>
+      </div>
+      <aside class="side-card">
+        <h3>找片要点速览</h3>
+        <ul>
+          <li><span>01</span>先定频道：电影、剧集、综艺、动漫四选一</li>
+          <li><span>02</span>再叠条件：类型、地区、年份逐层收窄</li>
+          <li><span>03</span>看状态：更新中与已完结分区呈现</li>
+          <li><span>04</span>按系列：剧场版与正片分开标注</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 三步 -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">HOW IT WORKS</span>
+        <h2>三步找到想看的内容</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>选频道</h3>
+          <p>从电影、电视剧、综艺、动漫四个频道中先确定内容形态，这是神马影视片库的第一层划分。</p>
+        </div>
+        <div class="step">
+          <h3>加筛选</h3>
+          <p>在频道内叠加类型、地区、年份条件。条件越多结果越少，适合已经知道自己想看什么的时候。</p>
+        </div>
+        <div class="step">
+          <h3>看详情</h3>
+          <p>进入条目详情区确认简介、集数与更新状态，再决定是否加入待看列表，减少无效点击。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section id="faq" style="background:var(--bg-soft);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag">FAQ</span>
+        <h2>关于神马影视的常见问题</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>神马影视主要提供哪些内容？</summary>
+          <p>页面围绕电影、电视剧、综艺和动漫四个频道组织内容，每个频道下再按类型、地区和年份细分，同时提供热门片单作为浏览起点。</p>
+        </details>
+        <details>
+          <summary>片库里的条目会更新吗？</summary>
+          <p>片单与推荐位会随片库变动调整。连载中的剧集和季播综艺会标注更新状态，已完结内容单独归组，方便区分。</p>
+        </details>
+        <details>
+          <summary>找不到某部作品怎么办？</summary>
+          <p>可以先用片名关键词在频道内检索，再逐步放宽类型和年份条件。若仍无结果，说明该条目暂未收录在神马影视当前片库中。</p>
+        </details>
+        <details>
+          <summary>在手机上浏览方便吗？</summary>
+          <p>页面针对小屏做了适配，导航收起为入口按钮，卡片改为单列排列，正文行宽与字号按手机阅读习惯调整。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载入口 -->
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>获取神马影视桌面端入口</h2>
+          <p>桌面端把片库分类、筛选条件和热门片单放在同一界面，适合长时间浏览与整理待看列表。下载入口开放后将在此处更新。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <span class="logo-text">神马影视</span>
+        <p>神马影视是一个面向影视爱好者的片库导航页，聚合电影、电视剧、综艺与动漫的分类入口和热门片单，帮助访问者用更少的步骤找到想看的内容。</p>
+      </div>
+      <div class="ft-links">
+        <div class="ft-col">
+          <h4>片库</h4>
+          <a href="#categories">电影频道</a>
+          <a href="#categories">电视剧频道</a>
+          <a href="#categories">综艺频道</a>
+          <a href="#categories">动漫频道</a>
+        </div>
+        <div class="ft-col">
+          <h4>使用</h4>
+          <a href="#guide">观看说明</a>
+          <a href="#picks">热门片单</a>
+          <a href="#faq">常见问题</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 神马影视 · 片库分类与热门片单</span>
+      <span>内容以页面实际收录为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
