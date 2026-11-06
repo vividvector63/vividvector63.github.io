@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51每日大乱斗每日大赛-每日大乱斗大赛看点_51每日大赛热门讨论</title>
+<meta name="description" content="51每日大乱斗每日大赛主题首页，汇总每日大乱斗大赛的热门看点、讨论方向与围观入口，帮助访问者快速了解当天话题焦点与内容脉络。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1033'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23ff8a3d' stroke-width='5'/%3E%3Cpath d='M32 15v34M15 32h34' stroke='%23ffd166' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1b1033;
+  --ink-2:#2b1a4d;
+  --paper:#fbf7f2;
+  --card:#ffffff;
+  --line:#e7dccf;
+  --accent:#ff6b2c;
+  --accent-2:#ffb03a;
+  --muted:#6f6479;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* Header */
+.site-header{
+  background:var(--ink);
+  color:#fff;
+  position:sticky;top:0;z-index:20;
+  border-bottom:2px solid var(--accent);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:68px;padding:10px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px;}
+.brand-mark{width:34px;height:34px;flex:0 0 auto;}
+.brand-text{font-size:17px;line-height:1.25;color:#fff;}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:14px;color:#e6dcff;padding:6px 11px;border-radius:999px;
+  transition:background .2s,color .2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.14);color:#fff;}
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255,176,58,.30), transparent 42%),
+    radial-gradient(circle at 10% 88%, rgba(255,107,44,.22), transparent 46%),
+    var(--ink-2);
+  color:#fff;
+  padding:46px 0 40px;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:34px;align-items:center;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:700;letter-spacing:.5px;
+  background:rgba(255,176,58,.16);color:#ffd08a;
+  border:1px solid rgba(255,176,58,.4);
+  padding:4px 12px;border-radius:999px;margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(25px,4.4vw,40px);
+  line-height:1.3;margin:0 0 16px;font-weight:900;letter-spacing:.5px;
+}
+.hero h1 em{font-style:normal;color:var(--accent-2);}
+.hero p.lead{font-size:15.5px;color:#d8cff0;margin:0 0 24px;max-width:36em;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 22px;border-radius:999px;font-weight:800;font-size:15px;
+  border:1px solid transparent;transition:transform .15s,background .2s;
+}
+.btn:active{transform:translateY(1px);}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#2a1405;box-shadow:0 8px 22px rgba(255,107,44,.32);}
+.btn-primary:hover{filter:brightness(1.05);}
+.btn-ghost{background:transparent;color:#f2ecff;border-color:rgba(255,255,255,.35);}
+.btn-ghost:hover{background:rgba(255,255,255,.1);}
+.hero-art{display:flex;justify-content:center;}
+.hero-art svg{width:100%;max-width:320px;height:auto;}
+
+/* Stats strip */
+.strip{
+  background:#fff;border-bottom:1px solid var(--line);
+}
+.strip-inner{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  padding:20px 0;
+}
+.stat{text-align:center;padding:6px 8px;}
+.stat b{display:block;font-size:20px;color:var(--accent);letter-spacing:.5px;}
+.stat span{font-size:13px;color:var(--muted);}
+
+/* Section base */
+section{padding:52px 0;}
+.sec-head{margin-bottom:26px;max-width:44em;}
+.sec-kicker{
+  font-size:12.5px;font-weight:800;letter-spacing:1.6px;color:var(--accent);
+  text-transform:uppercase;margin:0 0 8px;
+}
+.sec-head h2{
+  font-size:clamp(20px,2.6vw,27px);margin:0 0 10px;line-height:1.35;font-weight:900;
+}
+.sec-head p{margin:0;color:var(--muted);font-size:15px;}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;transition:box-shadow .2s,border-color .2s;
+}
+.card:hover{box-shadow:0 10px 26px rgba(43,26,77,.08);border-color:#d9c8b2;}
+.card-icon{width:40px;height:40px;margin-bottom:14px;}
+.card h3{font-size:17px;margin:0 0 8px;font-weight:800;line-height:1.4;}
+.card p{margin:0;font-size:14.5px;color:#524a5e;}
+
+/* Focus list */
+.focus{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.list{display:grid;gap:14px;}
+.item{
+  display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;
+}
+.item .num{
+  font-size:18px;font-weight:900;color:#fff;
+  background:linear-gradient(135deg,var(--ink-2),var(--accent));
+  width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+}
+.item h3{margin:0 0 6px;font-size:16.5px;font-weight:800;}
+.item p{margin:0;font-size:14.5px;color:#524a5e;}
+
+/* Discuss two-col */
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start;}
+.panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;
+}
+.panel h3{margin:0 0 12px;font-size:18px;font-weight:900;}
+.panel p{margin:0 0 12px;font-size:14.8px;color:#514960;}
+.panel p:last-child{margin-bottom:0;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.tag{
+  font-size:13px;color:var(--ink-2);background:#fdf1e4;border:1px solid #f6ddc3;
+  padding:4px 11px;border-radius:999px;font-weight:600;
+}
+
+/* Search */
+.search-box{
+  background:linear-gradient(135deg,#241640,#3a2263);color:#fff;
+  border-radius:var(--radius);padding:30px 24px;margin-top:0;
+}
+.search-box h3{margin:0 0 6px;font-size:19px;font-weight:900;}
+.search-box p{margin:0 0 18px;font-size:14px;color:#cfc3ea;}
+.search-form{display:flex;gap:10px;flex-wrap:wrap;}
+.search-form input[type="search"]{
+  flex:1 1 220px;min-width:0;padding:12px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.1);color:#fff;font-size:15px;outline:none;
+}
+.search-form input[type="search"]::placeholder{color:#b8aad6;}
+.search-form input[type="search"]:focus{border-color:var(--accent-2);background:rgba(255,255,255,.16);}
+.search-form button{
+  padding:12px 24px;border-radius:999px;border:none;cursor:pointer;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#2a1405;
+  font-weight:800;font-size:15px;
+}
+.search-result{margin-top:14px;font-size:14px;color:#ffd08a;min-height:1.2em;}
+
+/* FAQ */
+.faq{display:grid;gap:12px;}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;
+}
+summary{
+  cursor:pointer;list-style:none;padding:16px 20px;font-weight:800;font-size:15.5px;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:700;line-height:1;}
+details[open] summary::after{content:"–";}
+details .body{padding:0 20px 18px;font-size:14.5px;color:#514960;}
+
+/* Footer */
+footer{
+  background:var(--ink);color:#c9bde3;padding:38px 0 26px;margin-top:10px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12);
+}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:16px;}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;}
+.footer-links a:hover{color:#fff;text-decoration:underline;}
+.footer-bottom{padding-top:18px;font-size:13px;color:#9a8cb8;line-height:1.8;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:26px;}
+  .hero-art{order:-1;max-width:240px;margin:0 auto;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .two{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  section{padding:40px 0;}
+  .header-inner{min-height:auto;padding:12px 0;}
+  .nav{width:100%;overflow-x:auto;padding-bottom:2px;}
+  .nav a{white-space:nowrap;}
+  .cards{grid-template-columns:1fr;}
+  .strip-inner{grid-template-columns:1fr;gap:4px;}
+  .stat{display:flex;align-items:baseline;justify-content:center;gap:10px;text-align:left;}
+  .stat b{font-size:17px;}
+  .item{grid-template-columns:44px 1fr;padding:16px;}
+  .item .num{width:38px;height:38px;font-size:16px;border-radius:10px;}
+  .hero{padding:34px 0 30px;}
+  .btn{flex:1 1 auto;}
+  .search-box{padding:24px 18px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="51每日大乱斗每日大赛首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#2b1a4d"/>
+        <circle cx="32" cy="32" r="19" fill="none" stroke="#ff8a3d" stroke-width="5"/>
+        <path d="M32 15v34M15 32h34" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">51每日大乱斗每日大赛</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#focus">今日看点</a>
+      <a href="#topics">讨论方向</a>
+      <a href="#search">查找内容</a>
+      <a href="#faq">常见疑问</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">每日更新 · 热点围观</span>
+        <h1>51每日大乱斗每日大赛</h1>
+        <p class="lead">这里是围绕 51每日大乱斗每日大赛 的话题首页，把每天散落在各处的看点、讨论与争议整理成清晰的阅读路径。想知道当天大家在聊什么、哪些片段值得回看，从这里开始就能跟上节奏。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#focus">查看今日看点</a>
+          <a class="btn btn-ghost" href="#topics">了解讨论方向</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff8a3d"/>
+              <stop offset="1" stop-color="#ffd166"/>
+            </linearGradient>
+          </defs>
+          <circle cx="160" cy="150" r="118" fill="none" stroke="rgba(255,176,58,.28)" stroke-width="2"/>
+          <circle cx="160" cy="150" r="88" fill="none" stroke="rgba(255,176,58,.45)" stroke-width="2" stroke-dasharray="6 8"/>
+          <circle cx="160" cy="150" r="58" fill="rgba(255,255,255,.05)" stroke="url(#g1)" stroke-width="4"/>
+          <path d="M160 108v84M118 150h84" stroke="url(#g1)" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="66" cy="82" r="9" fill="#ff6b2c"/>
+          <circle cx="258" cy="96" r="6" fill="#ffd166"/>
+          <circle cx="248" cy="224" r="11" fill="rgba(255,176,58,.85)"/>
+          <circle cx="78" cy="222" r="7" fill="#ff8a3d"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="stat"><b>每日一更</b><span>话题焦点随当天内容滚动</span></div>
+      <div class="stat"><b>多角度</b><span>看点、讨论、争议分层呈现</span></div>
+      <div class="stat"><b>可检索</b><span>按关键词定位感兴趣的内容</span></div>
+    </div>
+  </div>
+
+  <section id="focus">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">今日看点</p>
+        <h2>每天先看这三处，围观不迷路</h2>
+        <p>51每日大乱斗每日大赛 的内容更新频率高，信息也零散。与其在多个页面之间来回跳，不如先按下面三个层次过一遍，再决定要不要深挖某个具体方向。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="4" y="8" width="40" height="32" rx="7" fill="#fdf1e4" stroke="#ff8a3d" stroke-width="2.5"/>
+            <path d="M14 18h20M14 25h14M14 32h9" stroke="#2b1a4d" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+          <h3>当天的核心话题是什么</h3>
+          <p>先判断 51每日大乱斗每日大赛 当天最集中的讨论点落在哪：是某个片段被反复提及，还是某个说法引发了分歧。抓住主话题，再看其他内容就不会被带偏。</p>
+        </article>
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="18" fill="#fdf1e4" stroke="#ff8a3d" stroke-width="2.5"/>
+            <path d="M24 14v10l7 5" stroke="#2b1a4d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>时间线怎么排</h3>
+          <p>同一个话题在上午和傍晚的说法往往不同。按时间顺序梳理 51每日大乱斗每日大赛 的相关内容，能看清哪一步是起点、哪一步是后续补充，避免把旧说法当成新进展。</p>
+        </article>
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 6l6 12 13 2-9.5 9 2.5 13-12-6.5L12 42l2.5-13L5 20l13-2z" fill="#fdf1e4" stroke="#ff8a3d" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+          <h3>哪些值得回看</h3>
+          <p>并非每条讨论都值得花时间。把 51每日大乱斗每日大赛 中信息密度高、有具体描述的片段挑出来，剩下的当作背景音即可，这样围观效率会高很多。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="focus" id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">讨论方向</p>
+        <h2>四类常见讨论，各有各的读法</h2>
+        <p>围绕 51每日大乱斗每日大赛 的讨论大致可以归成四类。分清类型，才知道该用看热闹的心态还是较真的心态去读。</p>
+      </div>
+      <div class="list">
+        <div class="item">
+          <div class="num">01</div>
+          <div>
+            <h3>片段与现场描述</h3>
+            <p>这一类内容以复述为主，描述 51每日大乱斗每日大赛 中发生了什么、谁说了什么。读的时候注意区分亲眼所见与转述，转述越多，细节失真的可能越大。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="num">02</div>
+          <div>
+            <h3>观点与立场碰撞</h3>
+            <p>同一件事被不同人解读，结论可能完全相反。看 51每日大乱斗每日大赛 的观点类内容，先找论据再看结论，比直接接受结论更稳妥。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="num">03</div>
+          <div>
+            <h3>补充与澄清</h3>
+            <p>热度上来之后，常有人补充背景或纠正误传。这类内容通常不抢眼，但对理解 51每日大乱斗每日大赛 的完整脉络很有帮助，值得单独留意。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="num">04</div>
+          <div>
+            <h3>延伸与二次创作</h3>
+            <p>基于 51每日大乱斗每日大赛 衍生的段子、剪辑和调侃，娱乐性强但信息量低。当作调剂可以，不宜作为判断依据。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div class="panel">
+        <h3>怎么读才不累</h3>
+        <p>面对 51每日大乱斗每日大赛 每天涌出的内容，最省力的办法是给自己定一条线：只看有具体描述、有时间地点、有前后文的条目。纯粹的情绪表达和一句话结论，扫一眼就行。</p>
+        <p>另一个习惯是随手记下关键节点。当同一件事出现新说法时，回头对照之前的记录，很容易发现哪里的表述变了。这种对比比反复刷新页面更能看清 51每日大乱斗每日大赛 的走向。</p>
+        <p>最后提醒一点：围观归围观，别把未经确认的说法当成事实转述出去。保持一点距离感，反而更容易看清全貌。</p>
+      </div>
+      <div class="panel">
+        <h3>常见内容标签</h3>
+        <p>为了方便查找，本站把 51每日大乱斗每日大赛 的相关内容按下面这些标签归类。点击或搜索对应词，可以更快定位到想看的类型。</p>
+        <div class="tags">
+          <span class="tag">今日看点</span>
+          <span class="tag">片段回看</span>
+          <span class="tag">观点碰撞</span>
+          <span class="tag">背景补充</span>
+          <span class="tag">误传澄清</span>
+          <span class="tag">二次创作</span>
+          <span class="tag">热门讨论</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="search" style="padding-top:0;">
+    <div class="wrap">
+      <div class="search-box">
+        <h3>查找你关心的话题</h3>
+        <p>输入关键词，快速定位 51每日大乱斗每日大赛 页面内的相关栏目与内容标签。</p>
+        <form class="search-form" role="search" onsubmit="return false;">
+          <input type="search" id="q" placeholder="例如：今日看点、片段回看、误传澄清" aria-label="搜索页面内容">
+          <button type="button" id="searchBtn">搜索</button>
+        </form>
+        <div class="search-result" id="result" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-kicker">常见疑问</p>
+        <h2>新访客常问的几个问题</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>这个页面主要提供什么内容？</summary>
+          <div class="body">本页是 51每日大乱斗每日大赛 的主题首页，围绕每日热点整理看点、讨论方向与查找入口，帮助访问者快速判断当天值得关注的内容，而不是逐条搬运原始信息。</div>
+        </details>
+        <details>
+          <summary>内容多久更新一次？</summary>
+          <div class="body">栏目结构保持稳定，具体讨论内容会随 51每日大乱斗每日大赛 的热点变化而调整。页面上的描述以整理时的公开讨论范围为限，不承诺实时同步每一个新说法。</div>
+        </details>
+        <details>
+          <summary>页面里的观点代表什么立场？</summary>
+          <div class="body">页面只做话题归类与阅读提示，不对 51每日大乱斗每日大赛 中的具体争议下结论。涉及事实的部分建议回到原始描述自行核对，尤其是只有单一来源的条目。</div>
+        </details>
+        <details>
+          <summary>可以下载或收藏内容吗？</summary>
+          <div class="body">目前页面以在线阅读为主，下载入口仍在准备中，暂未开放。建议通过浏览器收藏本页，方便下次直接回到 51每日大乱斗每日大赛 的首页入口。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#3a2263"/>
+          <circle cx="32" cy="32" r="19" fill="none" stroke="#ff8a3d" stroke-width="5"/>
+          <path d="M32 15v34M15 32h34" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>51每日大乱斗每日大赛</span>
+      </div>
+      <div class="footer-links">
+        <a href="#top">首页</a>
+        <a href="#focus">今日看点</a>
+        <a href="#topics">讨论方向</a>
+        <a href="#search">查找内容</a>
+        <a href="#faq">常见疑问</a>
+        <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.65;">下载</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>51每日大乱斗每日大赛 主题首页 · 内容整理以公开讨论为范围，具体说法请以原始描述为准。</p>
+      <p>本站为话题阅读与查找入口，不对相关争议作事实认定。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var map = {
+    "今日看点":"#focus",
+    "看点":"#focus",
+    "讨论方向":"#topics",
+    "观点碰撞":"#topics",
+    "片段回看":"#topics",
+    "背景补充":"#topics",
+    "误传澄清":"#topics",
+    "二次创作":"#topics",
+    "常见疑问":"#faq",
+    "查找":"#search"
+  };
+  var input = document.getElementById('q');
+  var btn = document.getElementById('searchBtn');
+  var out = document.getElementById('result');
+  function run(){
+    var v = (input.value||'').trim();
+    if(!v){ out.textContent = '请输入关键词，例如“今日看点”。'; return; }
+    var hit = null;
+    for(var k in map){
+      if(v.indexOf(k) !== -1){ hit = k; break; }
+    }
+    if(hit){
+      out.textContent = '找到相关栏目：' + hit + '，正在跳转…';
+      var el = document.querySelector(map[hit]);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }else{
+      out.textContent = '暂未匹配到“' + v + '”，可试试：今日看点、讨论方向、常见疑问。';
+    }
+  }
+  btn.addEventListener('click', run);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); run(); }
+  });
+})();
+</script>
+</body>
+</html>
