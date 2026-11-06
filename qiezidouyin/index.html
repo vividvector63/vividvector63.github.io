@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茄子抖音短视频-茄子短视频内容看点_抖音短视频热点与创作分享</title>
+<meta name="description" content="茄子抖音短视频主题首页，汇集茄子短视频的内容看点、热门片段与创作分享，帮助访客快速了解茄子抖音短视频的内容风格与观看入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232b1a3a'/%3E%3Cpath d='M32 12c8 6 12 12 12 20a12 12 0 0 1-24 0c0-8 4-14 12-20z' fill='%23b06cff'/%3E%3Ccircle cx='32' cy='34' r='4' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1d1428;
+  --ink-soft:#4b3d5e;
+  --muted:#7a6b8d;
+  --bg:#faf7fd;
+  --card:#ffffff;
+  --line:#e8dff2;
+  --purple:#7c3aed;
+  --purple-deep:#4c1d95;
+  --magenta:#e34f8a;
+  --lilac:#f1e9fc;
+  --radius:18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{line-height:1.3;margin:0;}
+p{margin:0;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:12px;top:12px;background:#fff;padding:8px 14px;border-radius:8px;z-index:99;}
+
+/* Header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,247,253,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;min-height:70px;flex-wrap:wrap;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800;font-size:18px;letter-spacing:.3px;color:var(--purple-deep);
+}
+.logo-mark{
+  width:38px;height:38px;flex:0 0 38px;
+  border-radius:12px;
+  background:linear-gradient(140deg,#7c3aed,#e34f8a);
+  display:grid;place-items:center;
+  box-shadow:0 6px 16px rgba(124,58,237,.28);
+}
+.logo-mark svg{width:22px;height:22px;}
+nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+nav.main a{
+  font-size:14.5px;color:var(--ink-soft);
+  padding:8px 12px;border-radius:999px;
+  transition:background .2s,color .2s;
+}
+nav.main a:hover,nav.main a:focus-visible{background:var(--lilac);color:var(--purple-deep);}
+.header-cta{
+  font-size:14px;font-weight:700;color:#fff;
+  background:linear-gradient(120deg,#7c3aed,#b03fd0);
+  padding:10px 18px;border-radius:999px;
+  white-space:nowrap;box-shadow:0 8px 18px rgba(124,58,237,.26);
+}
+.header-cta:hover{filter:brightness(1.06);}
+
+/* Hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:58px 0 62px;
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(227,79,138,.16),transparent 60%),
+    radial-gradient(760px 400px at 4% 0%,rgba(124,58,237,.16),transparent 62%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.6px;
+  color:var(--purple-deep);
+  background:#fff;border:1px solid var(--line);
+  padding:6px 14px;border-radius:999px;
+  margin-bottom:18px;
+}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--magenta);}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  font-weight:900;letter-spacing:.5px;
+  color:var(--purple-deep);
+  margin-bottom:16px;
+}
+.hero-lead{
+  font-size:16.5px;color:var(--ink-soft);max-width:34em;
+  margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(120deg,#7c3aed,#b03fd0);
+  color:#fff;font-weight:700;font-size:15px;
+  padding:13px 26px;border-radius:999px;
+  box-shadow:0 12px 26px rgba(124,58,237,.3);
+}
+.btn-primary:hover{filter:brightness(1.06);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1.5px solid #d8c8ee;color:var(--purple-deep);
+  font-weight:700;font-size:15px;
+  padding:12px 24px;border-radius:999px;background:#fff;
+}
+.btn-ghost:hover{border-color:var(--purple);}
+.hero-stats{
+  display:flex;gap:34px;margin-top:32px;flex-wrap:wrap;
+}
+.stat b{display:block;font-size:22px;font-weight:900;color:var(--purple-deep);}
+.stat span{font-size:13px;color:var(--muted);}
+
+.hero-art{
+  position:relative;
+  background:#fff;border:1px solid var(--line);
+  border-radius:26px;padding:18px;
+  box-shadow:0 22px 50px rgba(76,29,149,.14);
+}
+.phone{
+  border-radius:20px;overflow:hidden;
+  background:linear-gradient(160deg,#2b1a3a,#4c1d95 70%);
+  padding:16px;
+  color:#fff;
+}
+.phone-top{display:flex;align-items:center;gap:8px;font-size:12.5px;opacity:.85;margin-bottom:14px;}
+.phone-top .live{background:var(--magenta);border-radius:6px;padding:1px 7px;font-weight:700;font-size:11px;}
+.phone-title{font-size:19px;font-weight:800;line-height:1.45;margin-bottom:10px;}
+.phone-meta{font-size:12.5px;opacity:.75;margin-bottom:16px;}
+.phone-bars{display:flex;flex-direction:column;gap:9px;}
+.bar{height:9px;border-radius:6px;background:rgba(255,255,255,.18);}
+.bar.w1{width:86%;}
+.bar.w2{width:64%;background:rgba(227,79,138,.65);}
+.bar.w3{width:74%;}
+.phone-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.phone-tags span{
+  font-size:11.5px;padding:4px 10px;border-radius:999px;
+  background:rgba(255,255,255,.14);
+}
+
+/* Sections */
+section{padding:56px 0;}
+.section-head{margin-bottom:30px;max-width:44em;}
+.section-head .kicker{
+  font-size:13px;font-weight:800;letter-spacing:1.2px;
+  color:var(--magenta);text-transform:uppercase;
+}
+.section-head h2{
+  font-size:clamp(22px,2.8vw,29px);font-weight:900;
+  color:var(--purple-deep);margin:8px 0 10px;
+}
+.section-head p{color:var(--ink-soft);font-size:15.5px;}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 22px;
+  transition:transform .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(76,29,149,.1);}
+.card .ico{
+  width:44px;height:44px;border-radius:13px;
+  display:grid;place-items:center;margin-bottom:16px;
+  background:var(--lilac);
+}
+.card .ico svg{width:22px;height:22px;}
+.card h3{font-size:17px;font-weight:800;color:var(--purple-deep);margin-bottom:8px;}
+.card p{font-size:14.5px;color:var(--ink-soft);}
+
+/* Topics list */
+.topics{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.topic{
+  display:flex;gap:16px;align-items:flex-start;
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;background:var(--bg);
+}
+.topic .num{
+  flex:0 0 34px;height:34px;border-radius:10px;
+  background:linear-gradient(140deg,#7c3aed,#e34f8a);
+  color:#fff;font-weight:800;font-size:14px;
+  display:grid;place-items:center;
+}
+.topic h3{font-size:16px;font-weight:800;color:var(--purple-deep);margin-bottom:6px;}
+.topic p{font-size:14px;color:var(--ink-soft);}
+
+/* Filter */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  margin-bottom:22px;
+}
+.chip{
+  font-size:13.5px;font-weight:700;cursor:pointer;
+  border:1.5px solid #d8c8ee;background:#fff;color:var(--purple-deep);
+  padding:8px 16px;border-radius:999px;
+  transition:all .18s;
+}
+.chip:hover{border-color:var(--purple);}
+.chip.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+.search{
+  margin-left:auto;display:flex;gap:8px;
+}
+.search input{
+  font:inherit;font-size:14px;
+  border:1.5px solid #d8c8ee;border-radius:999px;
+  padding:8px 16px;min-width:200px;background:#fff;color:var(--ink);
+}
+.search input:focus{outline:2px solid rgba(124,58,237,.35);outline-offset:1px;}
+.search button{
+  font:inherit;font-size:14px;font-weight:700;cursor:pointer;
+  border:none;border-radius:999px;padding:9px 18px;
+  background:var(--purple-deep);color:#fff;
+}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.clip{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+}
+.clip-thumb{
+  height:118px;display:grid;place-items:center;
+  background:linear-gradient(140deg,#4c1d95,#b03fd0);
+  color:#fff;
+}
+.clip-thumb svg{width:34px;height:34px;opacity:.9;}
+.clip-body{padding:18px;}
+.clip-body h3{font-size:15.5px;font-weight:800;color:var(--purple-deep);margin-bottom:6px;}
+.clip-body p{font-size:13.5px;color:var(--ink-soft);}
+.clip-tag{
+  display:inline-block;font-size:12px;font-weight:700;
+  color:var(--magenta);background:#fdeaf2;
+  padding:2px 10px;border-radius:999px;margin-bottom:10px;
+}
+.empty{
+  display:none;padding:26px;border:1px dashed #d8c8ee;border-radius:var(--radius);
+  color:var(--muted);font-size:14.5px;text-align:center;background:#fff;
+}
+
+/* Download / CTA band */
+.band{
+  background:linear-gradient(120deg,#2b1a3a,#4c1d95 60%,#7c3aed);
+  color:#fff;border-radius:26px;padding:44px 40px;
+  display:flex;gap:32px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;
+}
+.band h2{font-size:clamp(21px,2.6vw,27px);font-weight:900;margin-bottom:10px;}
+.band p{color:rgba(255,255,255,.82);font-size:15px;max-width:38em;}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  background:#fff;color:var(--purple-deep);
+  font-weight:800;font-size:15px;
+  padding:13px 26px;border-radius:999px;
+  pointer-events:none;
+  opacity:.92;
+}
+.dl-note{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:10px;}
+
+/* FAQ */
+.faq{display:grid;gap:14px;}
+.faq details{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 20px;
+}
+.faq summary{
+  cursor:pointer;font-weight:800;font-size:15.5px;color:var(--purple-deep);
+  list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"＋";float:right;color:var(--magenta);font-weight:800;}
+.faq details[open] summary::after{content:"－";}
+.faq p{font-size:14.5px;color:var(--ink-soft);margin-top:10px;}
+
+/* Footer */
+footer.site{
+  background:#1d1428;color:#cbbfdd;
+  padding:44px 0 30px;margin-top:20px;
+}
+.footer-grid{display:flex;gap:40px;justify-content:space-between;flex-wrap:wrap;}
+footer .logo{color:#fff;font-size:16.5px;margin-bottom:12px;}
+.footer-about{max-width:34em;font-size:13.8px;line-height:1.85;color:#a99bbd;}
+.footer-links{display:flex;gap:34px;flex-wrap:wrap;font-size:13.8px;}
+.footer-links h4{color:#fff;font-size:14px;margin:0 0 10px;font-weight:800;}
+.footer-links a{display:block;color:#a99bbd;margin-bottom:7px;}
+.footer-links a:hover{color:#fff;}
+.copyright{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:30px;padding-top:18px;
+  font-size:12.8px;color:#8b7ea0;
+}
+
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:34px;}
+  .hero-art{order:2;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .clips{grid-template-columns:1fr 1fr;}
+  .topic-grid{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .wrap{padding:0 16px;}
+  .header-inner{min-height:auto;padding:12px 0;gap:10px;}
+  nav.main{order:3;width:100%;justify-content:flex-start;overflow-x:auto;}
+  nav.main a{padding:7px 10px;font-size:13.5px;}
+  .header-cta{padding:9px 14px;font-size:13px;}
+  .hero{padding:36px 0 42px;}
+  section{padding:38px 0;}
+  .cards,.clips{grid-template-columns:1fr;}
+  .hero-stats{gap:22px;}
+  .search{margin-left:0;width:100%;}
+  .search input{flex:1;min-width:0;}
+  .band{padding:30px 22px;}
+  .footer-links{gap:24px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="茄子抖音短视频 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3c3.6 3 5.5 5.8 5.5 9a5.5 5.5 0 1 1-11 0C6.5 8.8 8.4 6 12 3z"/>
+          <circle cx="12" cy="12.5" r="1.6" fill="#fff" stroke="none"/>
+        </svg>
+      </span>
+      <span>茄子抖音短视频</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#features">内容看点</a>
+      <a href="#topics">热门方向</a>
+      <a href="#clips">片段精选</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="header-cta" href="#clips">看片段</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>短视频内容主题首页</span>
+        <h1>茄子抖音短视频</h1>
+        <p class="hero-lead">茄子抖音短视频是一个围绕茄子短视频内容展开的主题页面：把热门片段、内容方向与创作观察放在一起，方便你按兴趣找到想看的茄子短视频，也方便创作者对照参考自己的选题与节奏。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#clips">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            浏览片段精选
+          </a>
+          <a class="btn-ghost" href="#topics">查看热门方向</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>3</b><span>内容看点板块</span></div>
+          <div class="stat"><b>6</b><span>热门内容方向</span></div>
+          <div class="stat"><b>9</b><span>片段精选条目</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-top"><span class="live">推荐</span><span>茄子抖音短视频 · 竖屏浏览</span></div>
+          <div class="phone-title">一条茄子短视频，从标题到前3秒都决定完播</div>
+          <div class="phone-meta">内容观察 · 竖屏节奏 · 片段拆解</div>
+          <div class="phone-bars">
+            <div class="bar w1"></div>
+            <div class="bar w2"></div>
+            <div class="bar w3"></div>
+            <div class="bar w1"></div>
+          </div>
+          <div class="phone-tags"><span>热门片段</span><span>选题方向</span><span>节奏观察</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Content Focus</div>
+        <h2>茄子抖音短视频的内容看点</h2>
+        <p>围绕茄子抖音短视频的观看与创作，这里从三个角度拆开看：片段本身的表达、选题的组织方式，以及竖屏观看下的节奏处理。三条线索彼此独立，又共同指向同一个主题。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="#7c3aed" stroke="none"/></svg>
+          </div>
+          <h3>片段表达</h3>
+          <p>一条茄子短视频能否被看完，往往取决于前几秒给出的信息密度。主题、画面与字幕要在同一节奏里说清楚一件事，避免信息堆叠导致观众提前划走。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e34f8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 3 4-6"/></svg>
+          </div>
+          <h3>选题组织</h3>
+          <p>茄子抖音短视频的选题通常围绕一个具体场景展开，而不是泛泛铺开。把大方向切成可拍摄的小切口，观众更容易在标题里判断这条内容是否与自己相关。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4c1d95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>竖屏节奏</h3>
+          <p>竖屏观看的注意力窗口更短，茄子抖音短视频在剪辑上倾向缩短铺垫，用动作、字幕或画面切换维持推进感，让内容在有限时长里完成一次完整表达。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="topics" id="topics">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Directions</div>
+        <h2>茄子抖音短视频的热门方向</h2>
+        <p>下面六个方向来自对茄子抖音短视频内容形态的归纳，每条都给出一个可操作的观察角度，便于按兴趣筛选，也便于创作者判断自己的内容落在哪一类。</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic">
+          <span class="num" aria-hidden="true">01</span>
+          <div><h3>生活场景记录</h3><p>以日常片段为主体，强调真实感和现场感。茄子抖音短视频在这类内容里通常保留环境音，减少过度包装。</p></div>
+        </article>
+        <article class="topic">
+          <span class="num" aria-hidden="true">02</span>
+          <div><h3>短剧式情节</h3><p>用两三句话交代冲突，再用反转收尾。茄子短视频的情节密度高，适合竖屏连续观看。</p></div>
+        </article>
+        <article class="topic">
+          <span class="num" aria-hidden="true">03</span>
+          <div><h3>知识轻讲解</h3><p>把一个小问题讲透，控制在一个观点加一个例子的结构里，茄子抖音短视频的讲解类内容多采用这种组织方式。</p></div>
+        </article>
+        <article class="topic">
+          <span class="num" aria-hidden="true">04</span>
+          <div><h3>技能演示</h3><p>以过程展示为主，镜头跟随手部或操作对象移动，让观众在几十秒内看清步骤要点。</p></div>
+        </article>
+        <article class="topic">
+          <span class="num" aria-hidden="true">05</span>
+          <div><h3>热点回应</h3><p>围绕正在被讨论的话题给出个人视角，茄子抖音短视频的这类内容重在态度明确、表达克制。</p></div>
+        </article>
+        <article class="topic">
+          <span class="num" aria-hidden="true">06</span>
+          <div><h3>视觉化剪辑</h3><p>以转场、配色和音乐配合为主要看点，弱化叙事，强化观看时的情绪节奏。</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="clips">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Selected Clips</div>
+        <h2>茄子抖音短视频片段精选</h2>
+        <p>按方向筛选，或直接输入关键词查找你感兴趣的内容。下列条目为茄子抖音短视频的内容示例，点击筛选可快速缩小范围。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="片段筛选">
+        <button class="chip active" data-filter="all" type="button">全部</button>
+        <button class="chip" data-filter="生活" type="button">生活</button>
+        <button class="chip" data-filter="剧情" type="button">剧情</button>
+        <button class="chip" data-filter="知识" type="button">知识</button>
+        <button class="chip" data-filter="技能" type="button">技能</button>
+        <div class="search">
+          <input id="q" type="search" placeholder="搜索片段关键词" aria-label="搜索片段关键词">
+          <button id="qbtn" type="button">搜索</button>
+        </div>
+      </div>
+      <div class="clips" id="clipsList">
+        <article class="clip" data-cat="生活" data-k="早餐 日常 记录">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16"/><path d="M6 9v9h12V9"/><path d="M9 5h6"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">生活</span><h3>清晨三分钟的厨房</h3><p>以固定机位记录早餐准备过程，茄子抖音短视频的日常类内容常以这种低干预方式呈现。</p></div>
+        </article>
+        <article class="clip" data-cat="剧情" data-k="反转 短剧 对话">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16v9H9l-5 4z"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">剧情</span><h3>一句话的反转</h3><p>两段对话完成铺垫与翻转，节奏紧凑，是茄子短视频里较常见的情节结构。</p></div>
+        </article>
+        <article class="clip" data-cat="知识" data-k="讲解 观点 例子">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M5 4h9a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M9 8h5"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">知识</span><h3>一个观点配一个例子</h3><p>把讲解压缩成观点加例证的两段式，茄子抖音短视频的知识类内容常采用这一框架。</p></div>
+        </article>
+        <article class="clip" data-cat="技能" data-k="演示 步骤 手部">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M8 13V6a2 2 0 1 1 4 0v5"/><path d="M12 11V5a2 2 0 1 1 4 0v7"/><path d="M16 12V9a2 2 0 1 1 4 0v6a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6v-3"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">技能</span><h3>三十秒看清一个步骤</h3><p>镜头贴近操作对象，步骤通过字幕标注，适合在竖屏下反复观看。</p></div>
+        </article>
+        <article class="clip" data-cat="生活" data-k="街头 现场 环境音">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">生活</span><h3>街头的一段现场声</h3><p>保留环境音与路人反应，茄子抖音短视频的现场类片段更强调未经修饰的真实感。</p></div>
+        </article>
+        <article class="clip" data-cat="知识" data-k="热点 态度 回应">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">知识</span><h3>三句话回应一个话题</h3><p>先给结论再补理由，表达克制，是茄子短视频热点内容中较稳妥的组织方式。</p></div>
+        </article>
+        <article class="clip" data-cat="剧情" data-k="对话 场景 表演">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16v10H4z"/><path d="M8 11h8"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">剧情</span><h3>两个人的一场对话</h3><p>用固定场景承载完整对话，减少切换，让观众把注意力放在台词与表情上。</p></div>
+        </article>
+        <article class="clip" data-cat="技能" data-k="转场 剪辑 配色">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h6l2-6 2 12 2-6h4"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">技能</span><h3>转场与配色的配合</h3><p>以节奏点对齐画面切换，茄子抖音短视频的视觉化剪辑往往在音乐重音处完成转场。</p></div>
+        </article>
+        <article class="clip" data-cat="生活" data-k="旅行 画面 记录">
+          <div class="clip-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M3 19l6-8 4 5 3-3 5 6z"/><circle cx="8" cy="7" r="2"/></svg></div>
+          <div class="clip-body"><span class="clip-tag">生活</span><h3>路上的一段画面</h3><p>以移动镜头记录沿途风景，配合简短字幕交代地点，茄子抖音短视频的旅行类内容多走这条路线。</p></div>
+        </article>
+      </div>
+      <p class="empty" id="empty">没有匹配的片段，换个关键词试试。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>把茄子抖音短视频放进你的日常浏览</h2>
+          <p>主题首页整理了内容看点、热门方向与片段精选三部分，浏览路径清晰，适合按兴趣逐层深入。后续版本将补充更多茄子抖音短视频的片段条目与方向说明。</p>
+        </div>
+        <div>
+          <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10"/><path d="M8 11l4 4 4-4"/><path d="M5 19h14"/></svg>
+            下载
+          </a>
+          <p class="dl-note">资源准备中，入口开放后可直接获取。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">FAQ</div>
+        <h2>关于茄子抖音短视频的常见问题</h2>
+        <p>把访问者最常问的几点放在一起，回答围绕页面实际提供的内容，不做超出资料范围的承诺。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>这个页面提供什么内容？</summary>
+          <p>页面围绕茄子抖音短视频整理了三类信息：内容看点、六个热门方向和九个片段精选条目。你可以通过筛选与搜索快速定位感兴趣的方向，再进入具体条目阅读说明。</p>
+        </details>
+        <details>
+          <summary>片段精选可以怎么用？</summary>
+          <p>上方筛选按钮按生活、剧情、知识、技能归类，搜索框支持按关键词匹配标题与描述。筛选与搜索都在当前页面内即时完成，不需要跳转。</p>
+        </details>
+        <details>
+          <summary>下载入口现在能使用吗？</summary>
+          <p>下载按钮目前处于占位状态，点击不会触发任何动作。待资源准备完成后会替换为正式地址，届时按钮将恢复正常交互。</p>
+        </details>
+        <details>
+          <summary>茄子抖音短视频的方向划分依据是什么？</summary>
+          <p>方向划分来自对茄子短视频常见内容形态的归纳，包含生活场景记录、短剧式情节、知识轻讲解、技能演示、热点回应与视觉化剪辑六类，用于帮助浏览与选题对照，并非平台官方分类。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.6 3 5.5 5.8 5.5 9a5.5 5.5 0 1 1-11 0C6.5 8.8 8.4 6 12 3z"/><circle cx="12" cy="12.5" r="1.6" fill="#fff" stroke="none"/></svg>
+          </span>
+          <span>茄子抖音短视频</span>
+        </div>
+        <p class="footer-about">茄子抖音短视频主题首页，聚焦茄子短视频的内容看点、热门方向与片段精选，帮助访客按兴趣浏览，也为创作者提供选题与节奏上的对照视角。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>页面导航</h4>
+          <a href="#features">内容看点</a>
+          <a href="#topics">热门方向</a>
+          <a href="#clips">片段精选</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div>
+          <h4>内容方向</h4>
+          <a href="#topics">生活场景记录</a>
+          <a href="#topics">短剧式情节</a>
+          <a href="#topics">知识轻讲解</a>
+          <a href="#topics">视觉化剪辑</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© 茄子抖音短视频 · 内容示例与方向说明仅用于主题展示，具体信息以实际内容为准。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var clips = Array.prototype.slice.call(document.querySelectorAll('#clipsList .clip'));
+  var input = document.getElementById('q');
+  var btn = document.getElementById('qbtn');
+  var empty = document.getElementById('empty');
+  var current = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    clips.forEach(function(c){
+      var okCat = current === 'all' || c.getAttribute('data-cat') === current;
+      var text = (c.textContent + ' ' + (c.getAttribute('data-k')||'')).toLowerCase();
+      var okKw = !kw || text.indexOf(kw) !== -1;
+      var show = okCat && okKw;
+      c.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  }
+
+  chips.forEach(function(ch){
+    ch.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      ch.classList.add('active');
+      current = ch.getAttribute('data-filter');
+      apply();
+    });
+  });
+  btn.addEventListener('click', apply);
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); apply(); } });
+})();
+</script>
+</body>
+  </html>
