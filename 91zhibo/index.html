@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91直播-直播平台观看入口_热门直播频道在线体验</title>
+<meta name="description" content="91直播是聚合多类直播频道的观看入口，提供热门直播频道导航、分类浏览与在线观看说明，帮助访客快速找到感兴趣的直播内容与使用方向。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23f43f5e' stroke-width='4'/%3E%3Cpath d='M27 24l14 8-14 8z' fill='%23f43f5e'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0d1117;
+  --bg-soft:#131a24;
+  --card:#161e2b;
+  --line:#243040;
+  --text:#e6edf3;
+  --muted:#9aa8b8;
+  --accent:#f43f5e;
+  --accent-2:#ff7a45;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,17,23,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:.5px}
+.brand .mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+}
+.brand .mark svg{width:18px;height:18px}
+nav.main-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{
+  padding:8px 12px;border-radius:9px;font-size:14px;color:var(--muted);
+  transition:.2s;
+}
+nav.main-nav a:hover{color:var(--text);background:var(--bg-soft)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:9px 16px;border-radius:10px;font-size:14px;font-weight:600;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+  white-space:nowrap;
+}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(700px 320px at 85% 10%,rgba(244,63,94,.16),transparent 70%),
+    radial-gradient(600px 300px at 5% 90%,rgba(255,122,69,.10),transparent 70%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--accent);font-weight:600;
+  border:1px solid rgba(244,63,94,.4);background:rgba(244,63,94,.08);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.tag .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(244,63,94,.18)}
+h1{font-size:44px;line-height:1.2;font-weight:800;letter-spacing:-.5px;margin-bottom:18px}
+.hero p.lead{font-size:16px;color:var(--muted);max-width:560px;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:11px;font-size:15px;font-weight:600;transition:.2s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 8px 24px rgba(244,63,94,.28)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:var(--bg-soft)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* hero visual */
+.hero-visual{
+  position:relative;border-radius:20px;overflow:hidden;
+  border:1px solid var(--line);
+  background:linear-gradient(160deg,#1b2331,#10161f);
+  padding:22px;
+}
+.screen{
+  position:relative;border-radius:14px;overflow:hidden;
+  background:linear-gradient(135deg,#2a1420,#1a1f2b);
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.06);
+}
+.screen svg{width:64px;height:64px;opacity:.9}
+.screen .live-pill{
+  position:absolute;top:12px;left:12px;
+  display:flex;align-items:center;gap:6px;
+  background:var(--accent);color:#fff;font-size:12px;font-weight:700;
+  padding:3px 10px;border-radius:999px;
+}
+.screen .live-pill .dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.chan-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.chan{padding:10px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.05)}
+.chan b{display:block;font-size:13px}
+.chan span{font-size:11px;color:var(--muted)}
+
+/* section common */
+section{padding:56px 0}
+.sec-head{max-width:720px;margin-bottom:32px}
+.sec-head h2{font-size:28px;font-weight:800;margin-bottom:10px;letter-spacing:-.3px}
+.sec-head p{color:var(--muted);font-size:15px}
+.kicker{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:8px;display:block}
+
+/* category cards */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cat-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;transition:.25s;
+}
+.cat-card:hover{border-color:rgba(244,63,94,.5);transform:translateY(-3px)}
+.cat-ico{
+  width:44px;height:44px;border-radius:12px;margin-bottom:16px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(244,63,94,.12);
+}
+.cat-ico svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8}
+.cat-card h3{font-size:17px;margin-bottom:8px}
+.cat-card p{font-size:14px;color:var(--muted)}
+
+/* featured channels */
+.feat-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.feat{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;
+}
+.feat .num{
+  flex:0 0 auto;width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:15px;color:#fff;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+}
+.feat h3{font-size:16px;margin-bottom:4px}
+.feat p{font-size:13.5px;color:var(--muted)}
+
+/* filter */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;
+}
+.chip{
+  padding:8px 16px;border-radius:999px;font-size:14px;cursor:pointer;
+  border:1px solid var(--line);background:var(--bg-soft);color:var(--muted);
+  transition:.2s;user-select:none;
+}
+.chip:hover{color:var(--text);border-color:#33414f}
+.chip.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-color:transparent}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.result-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
+}
+.result-card .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:8px}
+.result-card h3{font-size:15.5px;margin-bottom:6px}
+.result-card p{font-size:13.5px;color:var(--muted)}
+.empty{color:var(--muted);font-size:14px;padding:16px 0}
+
+/* about / article */
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:start}
+.prose p{font-size:15px;color:var(--muted);margin-bottom:16px}
+.prose p strong{color:var(--text)}
+.side-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.side-card h3{font-size:16px;margin-bottom:14px}
+.side-card ul{list-style:none;display:grid;gap:12px}
+.side-card li{font-size:14px;color:var(--muted);display:flex;gap:10px}
+.side-card li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px}
+
+/* download */
+.dl-box{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  background:linear-gradient(135deg,rgba(244,63,94,.14),rgba(255,122,69,.06));
+  border:1px solid rgba(244,63,94,.35);border-radius:20px;padding:32px;
+}
+.dl-box h2{font-size:24px;margin-bottom:6px}
+.dl-box p{font-size:14px;color:var(--muted)}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:11px;font-size:15px;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+  pointer-events:none;opacity:.92;
+}
+.dl-note{font-size:12px;color:var(--muted);margin-top:8px}
+
+/* footer */
+footer.site{
+  border-top:1px solid var(--line);background:var(--bg-soft);
+  padding:40px 0 28px;margin-top:20px;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot-brand{max-width:340px}
+.foot-brand .brand{font-size:18px;margin-bottom:12px}
+.foot-brand p{font-size:13.5px;color:var(--muted)}
+.foot-links{display:flex;gap:56px;flex-wrap:wrap}
+.foot-col h4{font-size:14px;margin-bottom:12px}
+.foot-col a{display:block;font-size:13.5px;color:var(--muted);margin-bottom:9px;transition:.2s}
+.foot-col a:hover{color:var(--accent)}
+.copyright{
+  margin-top:32px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .result-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr}
+  h1{font-size:34px}
+}
+@media (max-width:640px){
+  .nav-bar{height:auto;padding:12px 0;flex-wrap:wrap;justify-content:center}
+  nav.main-nav{order:3;width:100%;justify-content:center}
+  .hero{padding:40px 0}
+  h1{font-size:28px}
+  .hero p.lead{font-size:15px}
+  section{padding:40px 0}
+  .sec-head h2{font-size:23px}
+  .cat-grid,.feat-list,.result-grid{grid-template-columns:1fr}
+  .dl-box{padding:24px}
+  .foot-links{gap:32px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-bar">
+    <a class="brand" href="#top" aria-label="91直播 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#fff" stroke-width="2"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#fff"/></svg>
+      </span>
+      91直播
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#categories">频道分类</a>
+      <a href="#featured">热门推荐</a>
+      <a href="#browse">在线浏览</a>
+      <a href="#about">平台说明</a>
+    </nav>
+    <a class="nav-cta" href="#browse">开始观看</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><span class="dot"></span>多频道直播观看入口</span>
+        <h1 id="hero-title">91直播</h1>
+        <p class="lead">91直播把分散的直播频道集中到同一入口，按类型分区呈现，方便访客快速定位想看的内容。无论关注娱乐、聊天还是生活类直播，都可以先在这里了解频道构成，再决定下一步。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#browse">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#fff"/></svg>
+            进入频道浏览
+          </a>
+          <a class="btn btn-ghost" href="#categories">查看全部分类</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="screen">
+          <span class="live-pill"><span class="dot"></span>LIVE</span>
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#f43f5e" stroke-width="1.6"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#f43f5e"/></svg>
+        </div>
+        <div class="chan-list">
+          <div class="chan"><b>娱乐现场</b><span>互动 · 聊天</span></div>
+          <div class="chan"><b>生活分享</b><span>日常 · 陪伴</span></div>
+          <div class="chan"><b>才艺展示</b><span>音乐 · 表演</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">频道分类</span>
+        <h2>按直播类型浏览 91直播 内容</h2>
+        <p>不同访客的观看偏好差异很大，91直播在入口处就把主要频道类型拆开列出，减少在列表里反复翻找的时间。以下分类用于说明频道构成，方便对照选择。</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M9 10l5 2.5L9 15z"/></svg></div>
+          <h3>娱乐互动频道</h3>
+          <p>以实时互动、连麦和话题聊天为主的频道，节奏偏快，适合喜欢边看边参与讨论的访客。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.4"/><path d="M5 20c1.2-3.6 3.8-5.4 7-5.4s5.8 1.8 7 5.4"/></svg></div>
+          <h3>生活陪伴频道</h3>
+          <p>日常分享、居家场景与轻陪伴内容，画面节奏平缓，适合作为空闲时的背景内容。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-ico"><svg viewBox="0 0 24 24"><path d="M5 17V9l5 3V9l5 3V7l5 3v7z"/></svg></div>
+          <h3>才艺表演频道</h3>
+          <p>音乐、舞蹈和乐器等展示型直播，关注表演本身，适合想集中看一段完整呈现的观众。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section id="featured">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">热门推荐</span>
+        <h2>当前较受关注的 91直播 频道方向</h2>
+        <p>推荐位依据频道类型与近期活跃程度整理，用于给第一次访问的访客一个起点。推荐只说明方向，具体内容仍以进入频道后的实际呈现为准。</p>
+      </div>
+      <div class="feat-list">
+        <article class="feat">
+          <div class="num">01</div>
+          <div>
+            <h3>晚间互动专场</h3>
+            <p>晚间时段开播较为集中，互动类频道活跃度上升，适合下班后观看。</p>
+          </div>
+        </article>
+        <article class="feat">
+          <div class="num">02</div>
+          <div>
+            <h3>音乐才艺连播</h3>
+            <p>以演唱和乐器演奏为主，单个频道持续时间较长，便于连续观看。</p>
+          </div>
+        </article>
+        <article class="feat">
+          <div class="num">03</div>
+          <div>
+            <h3>生活记录日常</h3>
+            <p>生活类频道更新频率稳定，内容围绕日常场景展开，观看门槛较低。</p>
+          </div>
+        </article>
+        <article class="feat">
+          <div class="num">04</div>
+          <div>
+            <h3>新人主播试播</h3>
+            <p>新开播频道数量较多，风格尚在形成阶段，适合喜欢尝鲜的访客。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Browse with filter -->
+  <section id="browse">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">在线浏览</span>
+        <h2>用筛选快速缩小 91直播 频道范围</h2>
+        <p>点击下方标签即可筛选频道条目，帮助你在 91直播 的频道列表里按类型快速定位。筛选在本地即时生效，不需要跳转页面。</p>
+      </div>
+      <div class="filter-bar" role="tablist" aria-label="频道类型筛选">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">全部</button>
+        <button class="chip" data-filter="ent" role="tab" aria-selected="false">娱乐互动</button>
+        <button class="chip" data-filter="life" role="tab" aria-selected="false">生活陪伴</button>
+        <button class="chip" data-filter="talent" role="tab" aria-selected="false">才艺表演</button>
+      </div>
+      <div class="result-grid" id="resultGrid">
+        <article class="result-card" data-cat="ent">
+          <div class="meta"><span>娱乐互动</span><span>高活跃</span></div>
+          <h3>连麦话题房间</h3>
+          <p>多人连麦、话题轮换，互动密度高，适合愿意参与讨论的观众。</p>
+        </article>
+        <article class="result-card" data-cat="life">
+          <div class="meta"><span>生活陪伴</span><span>稳定更新</span></div>
+          <h3>居家日常记录</h3>
+          <p>做饭、整理、闲聊等生活片段，节奏舒缓，适合长时间挂着看。</p>
+        </article>
+        <article class="result-card" data-cat="talent">
+          <div class="meta"><span>才艺表演</span><span>晚间开播</span></div>
+          <h3>现场弹唱频道</h3>
+          <p>以吉他弹唱为主，曲目由观众点播，表演过程连续完整。</p>
+        </article>
+        <article class="result-card" data-cat="ent">
+          <div class="meta"><span>娱乐互动</span><span>新人开播</span></div>
+          <h3>新主播聊天室</h3>
+          <p>新开播频道，氛围轻松，观众较少时更容易获得回应。</p>
+        </article>
+        <article class="result-card" data-cat="talent">
+          <div class="meta"><span>才艺表演</span><span>周末专场</span></div>
+          <h3>舞蹈练习直播</h3>
+          <p>舞蹈教学与练习过程记录，适合想跟着看动作细节的观众。</p>
+        </article>
+        <article class="result-card" data-cat="life">
+          <div class="meta"><span>生活陪伴</span><span>午后时段</span></div>
+          <h3>午后茶话分享</h3>
+          <p>午后开播的生活闲聊，内容围绕日常见闻，语速平缓。</p>
+        </article>
+      </div>
+      <p class="empty" id="emptyTip" hidden>该分类下暂无条目，可切换其他标签查看。</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">平台说明</span>
+        <h2>了解 91直播 的入口定位</h2>
+      </div>
+      <div class="about-grid">
+        <div class="prose">
+          <p><strong>91直播是什么定位？</strong>91直播是一个面向访客的直播频道观看入口，把不同类型的直播内容按分类整理，让第一次访问的人也能在短时间内判断哪些频道符合自己的兴趣。</p>
+          <p>与单纯罗列链接的页面不同，91直播在入口层面提供了分类、推荐与筛选三层结构：分类帮助建立整体认知，推荐给出起步方向，筛选则用于缩小范围。三者配合，减少在大量条目中盲目点击的情况。</p>
+          <p>需要说明的是，频道内容由各主播自行决定，开播时间、主题和风格会随实际情况变化。91直播给出的分类与推荐反映的是频道类型方向，而不是对具体内容质量的承诺。访客进入频道后，仍以当时实际呈现的内容为准。</p>
+          <p>如果你只是想快速找到一类内容，可以直接使用上方的筛选标签；如果你想先了解整体结构，从频道分类和热门推荐两节读起会更高效。91直播的页面结构正是围绕这两种常见访问路径设计的。</p>
+        </div>
+        <aside class="side-card">
+          <h3>访客常关注的问题</h3>
+          <ul>
+            <li>频道按类型分区展示，便于对照选择。</li>
+            <li>推荐位反映近期活跃方向，非实时排名。</li>
+            <li>筛选在本地完成，无需跳转页面。</li>
+            <li>内容与开播时间以频道实际状态为准。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section>
+    <div class="wrap">
+      <div class="dl-box">
+        <div>
+          <h2>获取 91直播 客户端</h2>
+          <p>客户端入口用于后续在移动端更便捷地浏览频道，当前版本页面以网页端浏览为主。</p>
+          <p class="dl-note">下载地址准备中，开放后将在此处提供。</p>
+        </div>
+        <div>
+          <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 4v10m0 0l4-4m-4 4l-4-4M5 19h14" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            下载
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#fff" stroke-width="2"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#fff"/></svg>
+          </span>
+          91直播
+        </div>
+        <p>91直播是聚合多类直播频道的观看入口，提供分类浏览、热门方向与本地筛选，帮助访客快速找到感兴趣的直播内容。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面导航</h4>
+          <a href="#categories">频道分类</a>
+          <a href="#featured">热门推荐</a>
+          <a href="#browse">在线浏览</a>
+          <a href="#about">平台说明</a>
+        </div>
+        <div class="foot-col">
+          <h4>频道类型</h4>
+          <a href="#categories">娱乐互动</a>
+          <a href="#categories">生活陪伴</a>
+          <a href="#categories">才艺表演</a>
+        </div>
+        <div class="foot-col">
+          <h4>使用入口</h4>
+          <a href="#browse">开始观看</a>
+          <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none">下载客户端</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2025 91直播 · 直播频道观看入口</span>
+      <span>频道内容以实际开播状态为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#resultGrid .result-card');
+  var emptyTip = document.getElementById('emptyTip');
+
+  function applyFilter(filter){
+    var shown = 0;
+    cards.forEach(function(card){
+      var match = filter === 'all' || card.getAttribute('data-cat') === filter;
+      card.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    emptyTip.hidden = shown > 0;
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){
+        c.classList.remove('active');
+        c.setAttribute('aria-selected','false');
+      });
+      chip.classList.add('active');
+      chip.setAttribute('aria-selected','true');
+      applyFilter(chip.getAttribute('data-filter'));
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
